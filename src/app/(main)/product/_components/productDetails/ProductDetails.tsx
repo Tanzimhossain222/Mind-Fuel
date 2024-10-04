@@ -1,20 +1,20 @@
 import Breadcrumbs from "@/components/pageProps/Breadcrumbs";
-import { Product } from "@/interface";
+import { IProduct } from "@/interface";
 import { getProducts } from "@/lib/getProduct";
-import { sanitizeProductData } from "@/lib/sanitizeProductData";
+import { sanitizeProductArrayData } from "@/lib/sanitizeProductData";
 import Image from "next/image";
 import ProductInfo from "./ProductInfo";
 import ProductsOnSale from "./ProductsOnSale";
 
 interface ProductDetailsProps {
-  productInfo: Product;
+  productInfo: IProduct;
 }
 
 const ProductDetails = async ({ productInfo }: ProductDetailsProps) => {
   const { products } = await getProducts();
 
   // first 3 products
-  const allProducts = sanitizeProductData(products).slice(0, 4);
+  const allProducts = sanitizeProductArrayData(products).slice(0, 4);
 
   return (
     <div className="w-full mx-auto border-b-[1px] border-b-gray-300">
@@ -29,7 +29,7 @@ const ProductDetails = async ({ productInfo }: ProductDetailsProps) => {
           <div className="h-full xl:col-span-2">
             <Image
               className="w-full h-full object-cover"
-              src={productInfo?.image?.src}
+              src={productInfo?.image}
               alt={productInfo?.title}
               width={700}
               height={700}

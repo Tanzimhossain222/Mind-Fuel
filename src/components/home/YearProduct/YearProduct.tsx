@@ -1,29 +1,31 @@
-import React from "react";
-import { productOfTheYear } from "@/assets/images";
 import ShopNow from "../../designLayouts/buttons/ShopNow";
-import Image from "../../designLayouts/Image";
+
+import Image from "next/image";
 import Link from "next/link";
- 
 const YearProduct = () => {
   return (
-    <Link href="/shop">
+    <>
       <div className="w-full h-80 mb-20 bg-[#f3f3f3] md:bg-transparent relative font-titleFont">
         <Image
           className="w-full h-full object-cover hidden md:inline-block"
-          imgSrc={productOfTheYear.src}
+          src={"/images/BannerImage.jpg"}
+          alt="productOfTheYear"
+          width={1000}
+          height={1000}
         />
         <div className="w-full md:w-2/3 xl:w-1/2 h-80 absolute px-4 md:px-0 top-0 right-0 flex flex-col items-start gap-6 justify-center">
           <h1 className="text-3xl font-semibold text-primeColor">
-            Product of The year
+            Product of The Year
           </h1>
           <p className="text-base font-normal text-primeColor max-w-[600px] mr-4">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat
-            cupiditate modi amet! Facilis, aperiam quaerat.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
-          <ShopNow />
+          <Link href="/shop">
+            <ShopNow />
+          </Link>
         </div>
       </div>
-    </Link>
+    </>
   );
 };
 

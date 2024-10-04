@@ -17,6 +17,9 @@ export interface Product {
   options: Option[];
   images: Image[];
   image: Image;
+  rating?: number;
+  numReviews?: number;
+  category?: string;
 }
 
 interface Variant {
@@ -70,14 +73,56 @@ export interface Image {
   variant_ids: number[];
 }
 
-
-
 export interface ProductsList {
   _id: number;
-  img: string;
   productName: string;
   price: string;
-  color?: string; 
   badge?: string;
   des: string;
+  quantity: number;
+  title: string;
+  image: string;
+  description: string;
+  tags: string;
+  originalPrice: number | string;
+  salePrice: number | string;
+  sku: string;
+  weight: number;
+}
+
+export interface IProduct {
+  _id: string | number;
+  quantity: number;
+  price: number | string;
+  title: string;
+  image: string;
+  description: string;
+  category?: string;
+  rating?: number;
+  numReviews?: number;
+  countInStock?: number;
+  images?: string[];
+  position?: number;
+  tags: string;
+  originalPrice?: number | string;
+  salePrice?: number | string;
+  sku?: string;
+  weight?: number;
+  status?: string;
+  vendor?: string;
+  type?: string;
+}
+
+export interface CartProduct {
+  _id: string | number;
+  quantity: number;
+  price: number;
+  title: string;
+  image: string;
+  description: string;
+  tags: string;
+  originalPrice: number;
+  salePrice: number;
+  sku: string;
+  weight: number;
 }

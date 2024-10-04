@@ -20,10 +20,10 @@ export const metadata: Metadata = {
 
 import "slick-carousel/slick/slick.css";
 
-import Footer from "@/components/home/Footer/Footer";
-import FooterBottom from "@/components/home/Footer/FooterBottom";
-import Header from "@/components/home/Header/Header";
-import HeaderBottom from "@/components/home/Header/HeaderBottom";
+import Footer from "@/components/common/Footer/Footer";
+import FooterBottom from "@/components/common/Footer/FooterBottom";
+import Header from "@/components/common/Header/Header";
+import HeaderBottom from "@/components/common/Header/HeaderBottom";
 import SpecialCase from "@/components/SpecialCase/SpecialCase";
 import StoreProvider from "@/provider/StoreProvider";
 

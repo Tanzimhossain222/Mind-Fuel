@@ -1,12 +1,13 @@
 "use client";
 
+import { useAppSelector } from "@/hooks/redux.hooks";
 import Link from "next/link";
 import { MdSwitchAccount } from "react-icons/md";
 import { RiShoppingCart2Fill } from "react-icons/ri";
 
 const SpecialCase = () => {
-  // const products = useSelector((state) => state.orebiReducer.products);
-  const products = [];
+  const products = useAppSelector((state) => state.products.cart);
+
   return (
     <div className="fixed top-52 right-2 z-20 hidden md:flex flex-col gap-2">
       <Link href="/signin">
