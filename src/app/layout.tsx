@@ -20,12 +20,9 @@ export const metadata: Metadata = {
 
 import "slick-carousel/slick/slick.css";
 
-import Footer from "@/components/common/Footer/Footer";
-import FooterBottom from "@/components/common/Footer/FooterBottom";
 import Header from "@/components/common/Header/Header";
-import HeaderBottom from "@/components/common/Header/HeaderBottom";
-import SpecialCase from "@/components/SpecialCase/SpecialCase";
-import StoreProvider from "@/provider/StoreProvider";
+import AuthProvider from "@/provider/AuthProvider";
+import { Toaster } from "sonner";
 
 export default function RootLayout({
   children,
@@ -37,14 +34,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <StoreProvider>
+        <AuthProvider>
           <Header />
-          <HeaderBottom />
-          <SpecialCase />
           {children}
-          <Footer />
-          <FooterBottom />
-        </StoreProvider>
+          <Toaster richColors position="top-center" />
+        </AuthProvider>
       </body>
     </html>
   );

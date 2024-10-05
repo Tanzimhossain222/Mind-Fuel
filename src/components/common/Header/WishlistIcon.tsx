@@ -9,7 +9,7 @@ const WishlistIcon = () => {
     <Link href="/wishlist">
       <div className="relative">
         <FaHeart />
-        <span className="absolute font-titleFont top-3 -right-2 text-xs w-4 h-4 flex items-center justify-center rounded-full bg-red-500 text-white">
+        <span className="absolute font-titleFont top-3 -right-2 text-xs w-4 h-4 flex items-center justify-center rounded-full bg-black text-white">
           {wishlistItems.length > 0 ? wishlistItems.length : 0}
         </span>
       </div>

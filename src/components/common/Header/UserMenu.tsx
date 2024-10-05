@@ -1,16 +1,29 @@
 "use client";
 
+import { useAuth } from "@/hooks/auth.hooks";
 import { motion } from "framer-motion";
-import { FaCaretDown, FaUser } from "react-icons/fa";
-import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { FaCaretDown, FaUser } from "react-icons/fa";
 
 const UserMenu = () => {
   const [showUser, setShowUser] = useState(false);
+  const { isAuthenticated, logout } = useAuth();
+  const router = useRouter();
+
+  const handleLogout = () => {
+    logout();
+    setShowUser(false);
+    router.push("/");
+  };
 
   return (
     <div className="relative">
-      <div onClick={() => setShowUser(!showUser)} className="flex cursor-pointer">
+      <div
+        onClick={() => setShowUser(!showUser)}
+        className="flex cursor-pointer"
+      >
         <FaUser />
         <FaCaretDown />
       </div>
@@ -21,19 +34,34 @@ const UserMenu = () => {
           transition={{ duration: 0.5 }}
           className="absolute top-6 left-0 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"
         >
-          <Link href="/signin">
-            <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-              Login
-            </li>
-          </Link>
-          <Link href="/signup">
-            <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-              Sign Up
-            </li>
-          </Link>
-          <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-            Profile
-          </li>
+          {isAuthenticated ? (
+            <>
+              <Link href="/profile">
+                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                  Profile
+                </li>
+              </Link>
+              <li
+                onClick={handleLogout}
+                className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer"
+              >
+                Logout
+              </li>
+            </>
+          ) : (
+            <>
+              <Link href="/signin">
+                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                  Login
+                </li>
+              </Link>
+              <Link href="/signup">
+                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                  Sign Up
+                </li>
+              </Link>
+            </>
+          )}
         </motion.ul>
       )}
     </div>
@@ -41,3 +69,4 @@ const UserMenu = () => {
 };
 
 export default UserMenu;
+
