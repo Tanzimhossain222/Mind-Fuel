@@ -20,6 +20,7 @@ export interface Product {
   rating?: number;
   numReviews?: number;
   category?: string;
+  variantId?: number;
 }
 
 interface Variant {
@@ -88,6 +89,7 @@ export interface ProductsList {
   salePrice: number | string;
   sku: string;
   weight: number;
+  variantId?: number;
 }
 
 export interface IProduct {
@@ -111,6 +113,7 @@ export interface IProduct {
   status?: string;
   vendor?: string;
   type?: string;
+  variantId?: number;
 }
 
 export interface CartProduct {

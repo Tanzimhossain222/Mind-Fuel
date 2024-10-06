@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ItemCard from "./ItemCard";
 import Image from "next/image";
+import CheckoutButton from "./CheckoutButton";
 
 // Utility function to calculate shipping charges
 const calculateShippingCharge = (totalAmt: number) => {
@@ -67,13 +68,8 @@ const CartDetails = () => {
             </p>
           ))}
         </div>
-        <div className="flex justify-end">
-          <Link href="/paymentgateway">
-            <button className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300">
-              Proceed to Checkout
-            </button>
-          </Link>
-        </div>
+
+        <CheckoutButton />
       </div>
     </div>
   );

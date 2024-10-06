@@ -15,8 +15,6 @@ export default function MainLayout({
         <HeaderBottom />
         <SpecialCase />
         {children}
-        <Footer />
-        <FooterBottom />
       </StoreProvider>
     </>
   );

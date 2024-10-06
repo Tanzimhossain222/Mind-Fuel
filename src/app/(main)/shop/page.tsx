@@ -1,5 +1,5 @@
+import ShopSideNav from "@/app/(main)/shop/_components/ShopSideNav";
 import Breadcrumbs from "@/components/pageProps/Breadcrumbs";
-import ShopSideNav from "@/components/pageProps/shopPage/ShopSideNav";
 import { getProducts } from "@/lib/getProduct";
 import { sanitizeProductArrayData } from "@/lib/sanitizeProductData";
 import ProductsDisplay from "./_components/ProductsDisplay";

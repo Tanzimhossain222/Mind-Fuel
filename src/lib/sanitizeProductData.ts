@@ -20,6 +20,7 @@ export const sanitizeProductArrayData = (
     salePrice: item.variants[0]?.price || 0,
     sku: item.variants[0]?.sku || "",
     weight: item.variants[0]?.weight || 0,
+    variantId: item.variants[0]?.id || "",
   }));
 };
 
@@ -45,5 +46,6 @@ export const sanitizeProductData = (product: Product): IProduct => {
     status: product?.status || "",
     vendor: product?.vendor || "",
     type: product?.product_type || "",
+    variantId: product?.variants[0]?.id || "",
   };
 };

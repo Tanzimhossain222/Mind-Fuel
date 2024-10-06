@@ -23,6 +23,8 @@ import "slick-carousel/slick/slick.css";
 import Header from "@/components/common/Header/Header";
 import AuthProvider from "@/provider/AuthProvider";
 import { Toaster } from "sonner";
+import Footer from "@/components/common/Footer/Footer";
+import FooterBottom from "@/components/common/Footer/FooterBottom";
 
 export default function RootLayout({
   children,
@@ -38,6 +40,8 @@ export default function RootLayout({
           <Header />
           {children}
           <Toaster richColors position="top-center" />
+          <Footer />
+          <FooterBottom />
         </AuthProvider>
       </body>
     </html>

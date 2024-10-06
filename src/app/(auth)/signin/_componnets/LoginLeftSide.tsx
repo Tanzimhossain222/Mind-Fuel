@@ -12,7 +12,7 @@ const LoginLeftSide = () => {
           <Link href="/">
             <Image
               src={logoLight.src}
-              alt="logoImg"
+              alt="MINDFUEL Logo"
               className="w-28"
               width={100}
               height={100}
@@ -20,9 +20,9 @@ const LoginLeftSide = () => {
           </Link>
           <div className="flex flex-col gap-1 -mt-1">
             <h1 className="font-titleFont text-xl font-medium">
-              Stay sign in for more
+              Welcome Back to MINDFUEL
             </h1>
-            <p className="text-base">When you sign in, you are with us!</p>
+            <p className="text-base">Sign in to continue your wellness journey with us.</p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
             <span className="text-green-500 mt-1">
@@ -30,11 +30,10 @@ const LoginLeftSide = () => {
             </span>
             <p className="text-base text-gray-300">
               <span className="text-white font-semibold font-titleFont">
-                Get started fast with OREBI
+                Stay Connected with MINDFUEL
               </span>
               <br />
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
-              nisi dolor recusandae consectetur!
+              Keep track of your orders, discover personalized health tips, and access exclusive offers on our premium organic products.
             </p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
@@ -43,11 +42,10 @@ const LoginLeftSide = () => {
             </span>
             <p className="text-base text-gray-300">
               <span className="text-white font-semibold font-titleFont">
-                Access all OREBI services
+                Health at Your Fingertips
               </span>
               <br />
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
-              nisi dolor recusandae consectetur!
+              Easily manage your account, get recommendations on the best products for your health, and explore new wellness solutions.
             </p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
@@ -56,17 +54,16 @@ const LoginLeftSide = () => {
             </span>
             <p className="text-base text-gray-300">
               <span className="text-white font-semibold font-titleFont">
-                Trusted by online Shoppers
+                Trusted by Health Enthusiasts
               </span>
               <br />
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
-              nisi dolor recusandae consectetur!
+              Thousands of customers rely on MINDFUEL for their healthy living goals—join them by signing in now.
             </p>
           </div>
           <div className="flex items-center justify-between mt-10">
             <Link href="/">
               <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">
-                © OREBI
+                © MINDFUEL
               </p>
             </Link>
             <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">

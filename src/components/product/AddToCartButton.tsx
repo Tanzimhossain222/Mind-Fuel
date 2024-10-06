@@ -25,9 +25,10 @@ const AddToCartButton = ({ className, children, productInfo }: Props) => {
     sku,
     tags,
     weight,
+    variantId,
   } = productInfo;
 
-  const handleClick = () => {
+  const handleClick = async () => {
     dispatch(
       addToCart({
         _id,
