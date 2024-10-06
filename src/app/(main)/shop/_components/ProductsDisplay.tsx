@@ -1,18 +1,21 @@
 "use client";
 
 import Pagination from "@/components/pageProps/shopPage/Pagination";
-import ProductBanner from "@/components/pageProps/shopPage/ProductBanner";
+import ProductBanner from "@/app/(main)/shop/_components/ProductBanner";
+import { ProductsList } from "@/interface";
 import { useState } from "react";
 
-const ProductsDisplay = ({products}) => {
+interface ProductsDisplayProps {
+  products: ProductsList[]
+}
 
-  const [itemsPerPage, setItemsPerPage] = useState(12);
+const ProductsDisplay = ({ products }: ProductsDisplayProps) => {
+  const [itemsPerPage, setItemsPerPage] = useState<number>(12);
   
-  const itemsPerPageFromBanner = (itemsPerPage) => {
+  const itemsPerPageFromBanner = (itemsPerPage: number) => {
     setItemsPerPage(itemsPerPage);
   };
 
-console.log(products);
 
   return (
     <div className="w-full mdl:w-[80%] lgl:w-[75%] h-full flex flex-col gap-10">

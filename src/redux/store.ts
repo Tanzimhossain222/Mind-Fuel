@@ -7,7 +7,7 @@ import { productSlice } from "./product";
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      product: productSlice.reducer,
+      products: productSlice.reducer,
     }
   })
 }

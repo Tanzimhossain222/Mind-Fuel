@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
-import { logo, logoLight } from "../../../assets/images"; // Update to your asset paths
+import { logo, logoLight } from "../../../assets/images"; 
 import { navBarList } from "../../../constants";
 import Flex from "../../designLayouts/Flex";
 
